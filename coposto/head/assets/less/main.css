@@ -1,0 +1,46 @@
+.main-color {
+  background-color: #84DCC6 !important;
+}
+.second-color {
+  background-color: #A5FFD6 !important;
+}
+.third-color {
+  background-color: #FFA69E !important;
+}
+.fourth-color {
+  background-color: #FF686B !important;
+}
+.fifth-color {
+  background-color: #FFFFFF !important;
+}
+.main-color-text {
+  color: #84DCC6 !important;
+}
+.second-color-text {
+  color: #A5FFD6 !important;
+}
+.third-color-text {
+  color: #FFA69E !important;
+}
+.fourth-color-text {
+  color: #FF686B !important;
+}
+.fifth-color-text {
+  color: #FFFFFF !important;
+}
+.top-section .form {
+  padding: 0 25px;
+}
+.top-section .form button {
+  float: right;
+}
+.top-section .form .input-field {
+  overflow: hidden;
+  padding-right: 0.5em;
+  height: 63px;
+  line-height: 63px;
+}
+footer.footer {
+  margin-top: 20px;
+  padding-top: 20px;
+}
