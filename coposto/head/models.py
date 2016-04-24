@@ -2,8 +2,9 @@ from __future__ import unicode_literals
 
 from django.contrib.auth.models import User
 from django.core.validators import RegexValidator
+from django.db import models
 
-from coposto.common import *
+from coposto.common import TimeStampedModel
 
 
 class Profile(TimeStampedModel):
@@ -20,3 +21,25 @@ class Profile(TimeStampedModel):
 
     def __unicode__(self):
         return self.first_name + ', ' + self.email
+
+
+class Group(TimeStampedModel):
+    done = models.BooleanField(default=False)
+
+
+class Parcel(TimeStampedModel):
+    profile_a = models.ForeignKey(Profile, related_name='profile_a_parcel')
+
+    # destination_a = models.ForeignKey(City_Russian, related_name='destination_a_parcel')
+    # destination_b = models.ForeignKey(City_Russian, related_name='destination_b_parcel')
+
+    done = models.BooleanField(default=False)
+    date_a = models.DateField()
+    date_b = models.DateField()
+    parcel_name = models.CharField(max_length=100)
+    description = models.TextField(default='')
+    price = models.FloatField()
+    weight = models.FloatField()
+    is_featured = models.BooleanField(default=False)
+    group = models.ForeignKey(Group, blank=True, related_name='senders')
+    win = models.PositiveIntegerField(default=0)

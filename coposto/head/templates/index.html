@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 
 {% block body %}
-<div class="section no-pad-bot top-section" id="index-banner">
+{% verbatim %}
+<div class="section no-pad-bot top-section" id="index-banner" ng-if="!vm.loading">
   <div class="container">
     <br><br>
     <h1 class="header center third-color-text">COPOSTO</h1>
@@ -9,17 +10,16 @@
       <h5 class="header col s12 light">Transportation service made for you</h5>
     </div>
     <div class="container col s6 form">
-      <form>
-        <button type="submit" href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light third-color white-color-text">
+      <form ng-submit="vm.submit()">
+        <button type="submit" href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light third-color white-color-text" ng-disabled="vm.submitting || vm.isDisabled()">
           Send
         </button>
         <div class="input-field">
-          <input name="name" placeholder="What would you like to send?">
+          <input name="name" placeholder="What would you like to send?" ng-model="vm.stuff">
         </div>
       </form>
     </div>
     <br><br>
-
   </div>
 </div>
 
@@ -59,9 +59,11 @@
 
   </div>
   <br><br>
+  <toaster-container></toaster-container>
 
   <div class="section">
 
   </div>
 </div>
+{% endverbatim %}
 {% endblock %}

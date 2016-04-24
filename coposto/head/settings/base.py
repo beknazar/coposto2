@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'head',
     'static_precompiler',
+    'rest_framework',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -133,3 +134,14 @@ STATIC_PRECOMPILER_COMPILERS = (
 STATIC_PRECOMPILER_ROOT = os.path.join(BASE_DIR, 'assets')
 
 STATIC_PRECOMPILER_OUTPUT_DIR = ""
+
+
+# Rest framework
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
